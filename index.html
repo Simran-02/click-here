@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Love ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            font-family: "Poppins", sans-serif;
+            overflow: hidden;
+            position: relative;
+            animation: bgChange 15s infinite alternate;
+        }
+        
+        @keyframes bgChange {
+            0% {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+            }
+            25% {
+                background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            }
+            50% {
+                background: linear-gradient(135deg, #43cea2, #185a9d);
+            }
+            75% {
+                background: linear-gradient(135deg, #f7971e, #ffd200);
+            }
+            100% {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+            }
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 25px rgba(255, 255, 255, 0.9), 0 0 50px #00c6ff;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+            z-index: 2;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        
+        .btn {
+            padding: 18px 36px;
+            font-size: 1.4rem;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .yes {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: #333;
+            font-weight: bold;
+            box-shadow: 0 4px 25px rgba(255, 200, 200, 0.9);
+            animation: bounce 1.5s infinite;
+        }
+        
+        .yes:hover {
+            transform: scale(1.2) rotate(-2deg);
+            background: linear-gradient(45deg, #ffdde1, #ee9ca7);
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .no {
+            background: #222;
+            color: white;
+            position: absolute;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .hearts,
+        .sparkles,
+        .stars,
+        .bg-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .heart,
+        .sparkle,
+        .star {
+            position: absolute;
+            bottom: 0;
+            font-size: 24px;
+            animation: floatUp 5s linear infinite;
+        }
+        
+        .sparkle {
+            font-size: 14px;
+            text-shadow: 0 0 15px #fff, 0 0 30px #00c6ff;
+        }
+        
+        .star {
+            font-size: 10px;
+            color: white;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff9a9e;
+            animation: twinkle 3s infinite, moveStars 60s linear infinite;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        
+        @keyframes moveStars {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-200px);
+            }
+        }
+        
+        .bg-text span {
+            position: absolute;
+            font-size: 6rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.08);
+            white-space: nowrap;
+            animation: shimmer 3s infinite linear;
+            display: none;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                opacity: 0.2;
+                text-shadow: 0 0 10px #fff;
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 30px #ff4d6d, 0 0 60px #fff;
+            }
+            100% {
+                opacity: 0.2;
+                text-shadow: 0 0 10px #fff;
+            }
+        }
+        
+        @keyframes floatText {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .message {
+            font-size: 3rem;
+            color: #fff;
+            margin-top: 40px;
+            display: none;
+            animation: fadeIn 2s forwards, glow 2s infinite alternate;
+            z-index: 2;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 25px #00c6ff, 0 0 50px #6a11cb;
+            }
+            to {
+                text-shadow: 0 0 35px #fff, 0 0 60px #00c6ff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Do you love me? 💖</h1>
+    <div>
+        <button class="btn yes" onclick="showLove()">Yes 💕</button>
+        <button class="btn no" id="noBtn">No 😢</button>
+    </div>
+    <div class="message" id="loveMessage">I love you too! ❤️🥰</div>
+    <div class="hearts" id="hearts"></div>
+    <div class="sparkles" id="sparkles"></div>
+    <div class="stars" id="stars"></div>
+    <div class="bg-text" id="bgText"><span>Vandana ❤️ Sims</span></div>
+
+    <script>
+        const noBtn = document.getElementById("noBtn");
+        const bgText = document.getElementById("bgText").querySelector("span");
+
+        // Move the 'No' button randomly when hovered
+        noBtn.addEventListener("mouseenter", () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        function randomColor() {
+            const colors = [
+                "#ff4d6d",
+                "#ff9a9e",
+                "#fad0c4",
+                "#ffdde1",
+                "#ff7eb3",
+                "#00c6ff",
+                "#43cea2",
+                "#f7971e",
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function showLove() {
+            document.getElementById("loveMessage").style.display = "block";
+
+            // Disable the 'No' button
+            noBtn.style.display = "none";
+
+            // Show and animate background text
+            bgText.style.display = "block";
+
+            // Hearts animation with random colors
+            for (let i = 0; i < 60; i++) {
+                let heart = document.createElement("div");
+                heart.className = "heart";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDuration = 2 + Math.random() * 3 + "s";
+                heart.style.color = randomColor();
+                heart.innerHTML = ["❤", "💕", "💖", "💘", "💝"][
+                    Math.floor(Math.random() * 5)
+                ];
+                document.getElementById("hearts").appendChild(heart);
+                setTimeout(() => heart.remove(), 5000);
+            }
+        }
+
+        // Sparkles floating continuously with random colors
+        setInterval(() => {
+            let sparkle = document.createElement("div");
+            sparkle.className = "sparkle";
+            sparkle.style.left = Math.random() * 100 + "vw";
+            sparkle.style.animationDuration = 3 + Math.random() * 2 + "s";
+            sparkle.style.color = randomColor();
+            sparkle.innerHTML = "✦";
+            document.getElementById("sparkles").appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 5000);
+        }, 250);
+
+        // Stars twinkling in the background and moving slowly like a galaxy
+        setInterval(() => {
+            let star = document.createElement("div");
+            star.className = "star";
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.top = Math.random() * 100 + "vh";
+            star.innerHTML = "✦";
+            document.getElementById("stars").appendChild(star);
+            setTimeout(() => star.remove(), 6000);
+        }, 500);
+    </script>
+</body>
+
+</html>
